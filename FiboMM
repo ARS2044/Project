@@ -1,0 +1,19 @@
+def fiboMM():
+    Valor1= 0
+    Valor2 = 0
+    def fib():
+        nonlocal Valor1, Valor2
+        if Valor1==0 and Valor2 ==0:
+            Valor1= 1
+            return Valor1 
+        else:
+            n = Valor1 + Valor2
+            Valor2 = Valor2
+            Valor1= n
+            return n
+
+    return fib
+
+f = fibMM()
+for i in range(0,10):
+    print(f())
