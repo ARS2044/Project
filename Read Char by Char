@@ -1,0 +1,14 @@
+file = open("C:/Users/Aroja/PycharmProjects/Archivo.txt", "w")
+file.write("Saludos")
+file.close()
+
+Archivo = open('Archivo.txt', 'r')
+while 1:
+
+    char = Archivo.read(1)
+    if not char:
+        break
+
+    print(char)
+
+Archivo.close()
