@@ -1,0 +1,30 @@
+class PERSONA():
+    def __init__(self):
+        self.codigo = 0
+        self.nombre = ""
+        self.edad = 0
+
+
+def DIM_VECTOR(Cantidad):
+    arreglo = []
+    for contador in range(Cantidad):
+        arreglo.append(PERSONA())
+    return arreglo
+
+############# PROGRAMA ###############
+
+empleados = DIM_VECTOR(3)
+
+for contador in range(3):
+    print("PERSONA", contador + 1, ":")
+    empleados[contador].codigo = input("   CODIGO: ")
+    empleados[contador].nombre = input("   NOMBRE: ")
+    empleados[contador].edad = input("   EDAD  : ")
+print()
+
+print("LISTADO DE PERSONAS INGRESADAS:")
+for contador in range(3):
+    print("  - ", end="")
+    print(empleados[contador].codigo, empleados[contador].nombre, empleados[contador].edad, sep=",")
+print()
+input("Fin del Programa")
