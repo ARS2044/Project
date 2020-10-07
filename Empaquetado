@@ -1,0 +1,21 @@
+import struct
+
+
+
+def solicitud_WRQ_Oct(filename, sock, octects):
+    ascii_filename = filename.encode('utf-8')
+    blocksize = str(octects).encode("utf-8")
+
+    formato = f'!H{len(ascii_filename)}sB6sB7sB{len(blocksize)}sB'
+    wrq = struct.pack(formato,
+                      2,
+                      ascii_filename,
+                      0,
+                      b'octect',
+                      0,
+                      b'blksize',
+                      0,
+                      blocksize,
+                      0
+                      )
+    print(wrq)
